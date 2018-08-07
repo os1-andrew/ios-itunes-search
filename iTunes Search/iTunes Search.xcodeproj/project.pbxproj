@@ -8,19 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		1036D877211A2BD700CD7008 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1036D876211A2BD700CD7008 /* AppDelegate.swift */; };
-		1036D879211A2BD700CD7008 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1036D878211A2BD700CD7008 /* ViewController.swift */; };
 		1036D87C211A2BD700CD7008 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1036D87A211A2BD700CD7008 /* Main.storyboard */; };
 		1036D87E211A2BD800CD7008 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1036D87D211A2BD800CD7008 /* Assets.xcassets */; };
 		1036D881211A2BD800CD7008 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1036D87F211A2BD800CD7008 /* LaunchScreen.storyboard */; };
 		1036D889211A2DD500CD7008 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1036D888211A2DD500CD7008 /* SearchResult.swift */; };
 		1036D88E211A32AD00CD7008 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1036D88D211A32AD00CD7008 /* ResultType.swift */; };
 		1036D890211A35FB00CD7008 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1036D88F211A35FB00CD7008 /* SearchResultController.swift */; };
+		1036D892211A4F4C00CD7008 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1036D891211A4F4C00CD7008 /* SearchResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1036D873211A2BD700CD7008 /* iTunes Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iTunes Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1036D876211A2BD700CD7008 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1036D878211A2BD700CD7008 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1036D87B211A2BD700CD7008 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1036D87D211A2BD800CD7008 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1036D880211A2BD800CD7008 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -28,6 +27,7 @@
 		1036D888211A2DD500CD7008 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		1036D88D211A32AD00CD7008 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		1036D88F211A35FB00CD7008 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
+		1036D891211A4F4C00CD7008 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +92,7 @@
 		1036D88C211A2E0C00CD7008 /* View and View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1036D878211A2BD700CD7008 /* ViewController.swift */,
+				1036D891211A4F4C00CD7008 /* SearchResultsTableViewController.swift */,
 			);
 			path = "View and View Controllers";
 			sourceTree = "<group>";
@@ -169,8 +169,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1036D88E211A32AD00CD7008 /* ResultType.swift in Sources */,
-				1036D879211A2BD700CD7008 /* ViewController.swift in Sources */,
 				1036D889211A2DD500CD7008 /* SearchResult.swift in Sources */,
+				1036D892211A4F4C00CD7008 /* SearchResultsTableViewController.swift in Sources */,
 				1036D877211A2BD700CD7008 /* AppDelegate.swift in Sources */,
 				1036D890211A35FB00CD7008 /* SearchResultController.swift in Sources */,
 			);
