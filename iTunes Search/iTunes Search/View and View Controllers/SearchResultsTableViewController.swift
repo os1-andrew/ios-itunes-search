@@ -29,7 +29,7 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
         default:
             resultType = .movie
         }
-        
+        print(resultType)
         guard let type = resultType else {return}
         searchResultsController.performSearch(searchTerm: searchTerm, resultType: type) { (error) -> Void in
             if let error = error{

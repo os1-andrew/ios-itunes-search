@@ -33,6 +33,7 @@ class SearchResultController{
                 _ = completion(nil)
                 return
             }
+            print("data: \(data)")
             
             do{
                 let decoder = JSONDecoder()
