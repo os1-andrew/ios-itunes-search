@@ -15,7 +15,8 @@ class SearchResultController{
         
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)!
         let searchQueryItem = URLQueryItem(name:"term", value: searchTerm)
-        urlComponents.queryItems = [searchQueryItem]
+        let entityQueryItem = URLQueryItem(name:"entity", value: resultType.rawValue)
+        urlComponents.queryItems = [searchQueryItem,entityQueryItem]
         
         guard let requestURL = urlComponents.url else {
             NSLog("Error creating request URL")
@@ -33,24 +34,22 @@ class SearchResultController{
                 _ = completion(nil)
                 return
             }
-            print("data: \(data)")
-            
             do{
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
-                self.searchResults = try decoder.decode(SearchResults.self, from: data).results
+                let jsonResults = try decoder.decode(SearchResults.self, from: data)
+                print(jsonResults)
+                self.searchResults = jsonResults.results
+                
+                
+                
                 _ = completion(nil)
             } catch {
                 NSLog("Error decoding")
                 _ = completion(nil)
                 return
             }
-            
-            
-            
             }.resume()
-        
-        
     }
     
     
