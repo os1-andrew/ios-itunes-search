@@ -11,7 +11,7 @@ import Foundation
 private let baseURL = URL(string: "https://itunes.apple.com/search")!
 
 class SearchResultController{
-    func performSearch(searchTerm:String, resultType: ResultType, completion: @escaping ()->Void){
+    func performSearch(searchTerm:String, resultType: ResultType, completion: @escaping (Error?)->Void){
         
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)!
         let searchQueryItem = URLQueryItem(name:"term", value: searchTerm)
@@ -25,12 +25,12 @@ class SearchResultController{
         URLSession.shared.dataTask(with: requestURL) { (data, _, error) in
             if let error = error{
                 NSLog("Error: \(error)")
-                _ = completion()
+                _ = completion(error)
                 return
             }
             guard let data = data else {
                 NSLog("Error: No data")
-                _ = completion()
+                _ = completion(nil)
                 return
             }
             
@@ -38,10 +38,10 @@ class SearchResultController{
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 self.searchResults = try decoder.decode(SearchResults.self, from: data).results
-                _ = completion()
+                _ = completion(nil)
             } catch {
                 NSLog("Error decoding")
-                _ = completion()
+                _ = completion(nil)
                 return
             }
             

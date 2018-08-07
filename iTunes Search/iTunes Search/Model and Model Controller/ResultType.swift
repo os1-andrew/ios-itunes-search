@@ -11,5 +11,5 @@ import Foundation
 enum ResultType: String {
     case software = "software"
     case musicTrack = "musicTrack"
-    case move = "movie"
+    case movie = "movie"
 }
