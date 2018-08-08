@@ -18,9 +18,21 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let searchTerm = searchBar.text else {return}
-        var resultType:ResultType?
-        
         let index = segmentedControl.selectedSegmentIndex
+        
+        helperSearchFunc(searchTerm: searchTerm, index: index)
+    }
+    
+    @IBAction func changeType(_ sender: Any) {
+        guard let searchTerm = searchBar.text else {return}
+        let index = segmentedControl.selectedSegmentIndex
+        helperSearchFunc(searchTerm: searchTerm, index: index)
+    }
+    
+    
+    private func helperSearchFunc(searchTerm: String, index:Int){
+        
+        var resultType:ResultType?
         switch index {
         case 0:
             resultType = .software
@@ -29,7 +41,7 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
         default:
             resultType = .movie
         }
-        print(resultType)
+        
         guard let type = resultType else {return}
         searchResultsController.performSearch(searchTerm: searchTerm, resultType: type) { (error) -> Void in
             if let error = error{
@@ -37,12 +49,13 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
                 return
             }
             DispatchQueue.main.async {
-                 self.tableView.reloadData()
+                self.tableView.reloadData()
             }
-           
+            
         }
-        
     }
+    
+    
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
